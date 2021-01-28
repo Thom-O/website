@@ -1,0 +1,534 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500&family=PT+Serif:ital,wght@0,700;1,400&display=swap');
+
+$black: #000;
+$white: #fff;
+$grey: #666666;
+$darkGrey: #333333;
+$orange: #F8A322;
+$spacer: #b1b1b1;
+$premium: #b4b8bc;
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: $grey;
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    font-family: 'PT Serif', serif;
+    color: $white;
+    text-transform: uppercase;
+    font-size: 2.3rem;
+    font-weight: 400;
+}
+h2 {
+    color: $white;
+    font-family: 'PT Serif', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+h3 {
+    color: $orange;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.5rem;
+    position: relative;
+}
+h4 {
+    font-weight: 400;
+    font-size: 1rem;
+}
+a {
+    transition: all 0.1s ease-in-out;
+}
+.container.custom {
+    max-width: 1300px;
+}
+.btn {
+    border-radius: 10px;
+    color: $white;
+    outline: none;
+    box-shadow: none;
+    font-family: "PT Serif", serif;
+    padding: 0.4rem 0 0.5rem 0;
+    font-size: 1.3rem;
+    min-width: 14rem;
+    &.btn-primary:not(:disabled):not(.disabled) {
+        background-color: $orange;
+        border: 2px solid $orange;
+        &:hover, &:focus, &:active {
+            background-color: $white;
+            color: $orange;
+            box-shadow: none;
+        }
+        &.grey {
+            background-color: $spacer;
+            border: 2px solid $spacer;
+            &:hover, &:focus, &:active {
+                background-color: $white;
+                color: $spacer;
+                box-shadow: none;
+            }
+        }
+    }
+    &.btn-default:not(:disabled):not(.disabled) {
+        background-color: transparent;
+        border: 2px solid $white;
+        &:hover, &:focus, &:active {
+            background-color: $white;
+            color: $darkGrey;
+            box-shadow: none;
+        }
+    }
+}
+nav.navbar {
+    background: $white;
+    position: relative;
+    z-index: 1;
+    height: 3rem;
+    > a.navbar-brand {
+        position: absolute;
+        background: $white;
+        border-radius: 100%;
+        font-family: 'PT Serif', serif;
+        color: $grey;
+        z-index: 2;
+        font-size: 3rem;
+        left: 1rem;
+        width: 4rem;
+        height: 4rem;
+        top: calc(100% - 2rem);
+    }
+    > button.navbar-toggler {
+        background: transparent;
+        &.collapsed > span.navbar-toggler-icon {
+            background-image: url("../images/menu.png");
+        }
+        > span.navbar-toggler-icon {
+           width: 30px;
+            height: 30px;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-image: url("../images/cancel.png");
+        }
+    }
+    > .navbar-collapse {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        background: $white;
+        > ul.navbar-nav > li.nav-item {
+            margin: 0;
+            padding: 0;
+            &.active > a.nav-link {
+                color: $orange;
+            }
+            > a.nav-link {
+                color: $grey;
+                padding: 0;
+                margin: 0;
+                font-size: 1rem;
+                font-weight: 400;
+                &:hover {
+                    color: $orange;
+                }
+                &:focus, &:active {
+                    color: $grey;
+                }
+            }
+        }
+    }
+}
+#featured-image {
+    background-image: url("../images/featured-image.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 20rem;
+    padding-bottom: 2rem;
+    h1 {
+        margin-bottom: 0.5rem;
+    }
+    h2 {
+        margin-bottom: 2rem;
+    }
+    .btn {
+        margin: 0 1.5rem 1rem 1.5rem;
+        &.btn-primary {
+            &:hover, &:focus, &:active {
+                background-color: transparent;
+                color: $white;
+            }
+        }
+    }
+    &:after {
+        padding-bottom: 3rem;
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: $white;
+        -webkit-clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%, 50% 100%);
+        clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%, 50% 100%);
+    }
+}
+#usp-wrapper {
+    border-bottom: 1px solid $spacer;
+    padding: 2rem 0;
+    .usp {
+        > .image {
+            border: 1px solid $darkGrey;
+            transform: rotate(45deg);
+            margin: 3rem 0;
+            width: 7rem;
+            height: 7rem;
+            > img {
+                transform: rotate(-45deg);
+                object-fit: cover;
+                width: 4.3rem;
+            }
+        }
+        > h5 {
+            max-width: 10rem;
+            position: relative;
+            font-size: 1.2rem;
+            &:after {
+                display: block;
+                content: "";
+                width: 4.5rem;
+                height: 1px;
+                background: $spacer;
+                position: absolute;
+                top: calc(100% + 0.8rem);
+                left: calc(50% - 2.25rem);
+            }
+        }
+        > p {
+            max-width: 10rem;
+            font-weight: 200;
+            line-height: 1.3rem;
+        }
+    }
+}
+#presale {
+    position: relative;
+    padding: 3rem 0;
+    h3:after {
+        background-color: $spacer;
+        display: block;
+        content: "";
+        width: 3rem;
+        height: 1px;
+        position: absolute;
+        left: 0;
+        top: calc(100% + 0.4rem);
+    }
+    p {
+        font-weight: 200;
+    }
+    &:after {
+        display: none;
+        content: "";
+        position: absolute;
+        height: calc(100% - 3rem);
+        right: 0;
+        width: 70%;
+        bottom: 0;
+        z-index: -1;
+        background-image: url("../images/macbook.jpg");
+        background-size: auto 100%;
+        background-position: center left;
+        background-repeat: no-repeat;
+    }
+}
+#description {
+    background: $darkGrey;
+    position: relative;
+    h3 {
+        margin-bottom: 0;
+        &:first-of-type {
+            margin-bottom: 2rem;
+            &:after {
+                background-color: $spacer;
+                display: block;
+                content: "";
+                width: 4rem;
+                height: 1px;
+                position: absolute;
+                left: 0;
+                top: calc(100% + 0.4rem);
+                opacity: 0.3;
+            }
+        }
+    }
+    p {
+        color: $white;
+        font-weight: 200;
+        margin-bottom: 5rem;
+        position: relative;
+        &:first-of-type {
+            margin-bottom: 3rem;
+        }
+        &:last-of-type {
+            margin-bottom: 2.5rem;
+        }
+        > span.image {
+            background-color: $white;
+            transform: rotate(45deg);
+            width: 5rem;
+            height: 5rem;
+            margin: 0;
+            top: 2rem;
+            z-index: 1;
+            position: relative;
+            left: calc(50% - 2.5rem);
+            pointer-events: none;
+            > img {
+                transform: rotate(-45deg);
+                width: 50px;
+                object-fit: cover;
+            }
+        }
+    }
+    > img {
+        position: absolute;
+        height:  100%;
+        right: 0;
+        bottom: 0;
+        object-fit: cover;
+        width: 100%;
+        opacity: 0.1;
+        z-index: 0;
+    }
+}
+#prices h3, #contact h3 {
+    width: 100%;
+    border-bottom: 1px solid $spacer;
+    text-align: center;
+}
+#prices {
+    padding: 3rem 0;
+    position: relative;
+    .card {
+        border: 0;
+        border-radius: 0;
+        background: #f7f8f8;
+        max-width: 24rem;
+        &.basic > .card-header {
+            background: $orange;
+        }
+        &.premium > .card-header {
+            background: $premium;
+        }
+        > .card-header {
+            color: $white;
+            border: 0;
+            border-radius: 0;
+            position: relative;
+            padding: 2rem 0 8rem 0;
+            margin-bottom: 7rem;
+            font-weight: 700;
+            font-size: 1.6rem;
+            > span.price {
+                background: $white;
+                position: absolute;
+                top: calc(100% - 5.5rem);
+                left: calc(50% - 5.5rem);
+                width: 11rem;
+                height: 11rem;
+                color: $black;
+                border-radius: 100%;
+                font-weight: bold;
+                box-shadow: 0 0 0 10px rgba($white, 0.6);
+            }
+        }
+        > .card-body {
+            font-weight: 200;
+            > a.btn {
+                margin-top: 2rem;
+            }
+        }
+    }
+}
+#contact {
+    form {
+        > input {
+            border: 1px solid $spacer;
+            background-color: transparent;
+            width: 100%;
+            font-weight: 200;
+            margin: 0 0 1rem 0;
+            border-radius: 10px;
+            box-shadow: inset 0 0 0 0 rgba($spacer, 0.2);
+            outline: none;
+            transition: all 0.1s ease-in-out;
+            font-size: 1rem;
+            padding: 0.7rem 0.5rem;
+            &:focus {
+                outline: none;
+                box-shadow: inset  0 0 0 5px rgba($spacer, 0.2);
+            }
+            &::placeholder {
+                color: $spacer;
+                opacity: 1; /* Firefox */
+            }
+            &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                color: $spacer;
+            }
+            &::-ms-input-placeholder { /* Microsoft Edge */
+                color: $spacer;
+            }
+        }
+        > button {
+            margin: 1.5rem 0 0 0;
+        }
+    }
+}
+footer {
+    background-color: $darkGrey;
+    min-height: 5rem;
+    color: $white;
+    font-weight: 200;
+    a {
+        text-decoration: none;
+        color: $white;
+        &:hover {
+            text-decoration: none;
+            color: $orange;
+        }
+    }
+    ul#socials {
+        list-style-type: none;
+    }
+}
+@media(min-width: 767px) {
+    #featured-image {
+        height: 30rem;
+        padding-bottom: 6rem;
+        h1 {
+            margin-bottom: 1.5rem;
+        }
+        h2 {
+            margin-bottom: 3rem;
+        }
+        .btn {
+            margin: 0 1.5rem;
+        }
+        &:after {
+            padding-bottom: 4rem;
+        }
+    }
+    #description {
+        > img {
+            width: 50%;
+            opacity: 1;
+            z-index: 0;
+        }
+        p {
+            &:not(:first-of-type) {
+                padding-right: 3.5rem;
+            }
+            > span.image {
+                position: absolute;
+                top: 0;
+                left: calc(100% + 15px - 2.5rem);
+            }
+        }
+    }
+    #presale {
+        padding: 6rem 0;
+        &:after {
+            display: block;
+        }
+    }
+    #prices {
+        padding: 3rem 0 5rem 0;
+        .card > .card-body > a.btn {
+            margin-top: 5rem;
+        }
+    }
+    h4 {
+        font-size: 1.5rem;
+    }
+    #contact form > input {
+        font-size: 1.3rem;
+        padding: 0.9rem 0.5rem;
+    }
+}
+@media(min-width: 991px) {
+    h1 {
+        font-size: 4.3rem;
+    }
+    h2 {
+        font-size: 1.7rem;
+    }
+    nav.navbar {
+        height: 4.4rem;
+        > a.navbar-brand {
+            font-size: 4.5rem;
+            width: 8.7rem;
+            height: 8.7rem;
+            left: calc(50% - 4.35rem);
+            top: calc(100% - 4.35rem);
+        }
+        > .navbar-collapse {
+            position: relative;
+            top: 0;
+            > ul.navbar-nav {
+                top: auto;
+                width: 100%;
+            }
+        }
+    }
+    #featured-image {
+        padding-bottom: 9rem;
+        height: 47rem;
+        h2 {
+            margin-bottom: 6rem;
+        }
+        .btn {
+            margin: 0 2.5rem;
+        }
+        &:after {
+            padding-bottom: 6rem;
+        }
+    }
+    #presale:after {
+        width: 63%;
+    }
+}
+@media(min-width: 1199px) {
+    nav.navbar > .navbar-collapse > ul.navbar-nav > li.nav-item > a.nav-link{
+        font-size: 1.3rem;
+    }
+    .btn {
+        font-size: 1.6rem;
+        min-width: 17rem;
+    }
+    #usp-wrapper {
+        padding: 6rem 0;
+        .usp {
+            > h5 {
+                font-size: 1.4rem;
+            }
+            > .image {
+                width: 10rem;
+                height: 10rem;
+                > img {
+                    width: 6.3rem;
+                }
+            }
+        }
+    }
+    #presale {
+        padding: 6rem 0;
+        &:after {
+            width: 60%;
+        }
+    }
+}
